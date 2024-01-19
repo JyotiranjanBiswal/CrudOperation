@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="Jrb\CrudOperation\Api\StudentRepositoryInterface" type="Jrb\CrudOperation\Model\StudentRepository"/>
+	<preference for="Jrb\CrudOperation\Api\Data\StudentInterface" type="Jrb\CrudOperation\Model\Student"/>
+	<preference for="Jrb\CrudOperation\Api\Data\StudentSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="Jrb\CrudOperation\Model\ResourceModel\Student\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">jrb_crudoperation_student</argument>
+			<argument name="resourceModel" xsi:type="string">Jrb\CrudOperation\Model\ResourceModel\Student\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="jrb_crudoperation_student_listing_data_source" xsi:type="string">Jrb\CrudOperation\Model\ResourceModel\Student\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+</config>

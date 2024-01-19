@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+	<route url="/V1/jrb-crudoperation/student" method="POST">
+		<service class="Jrb\CrudOperation\Api\StudentRepositoryInterface" method="save"/>
+		<resources>
+			<resource ref="Jrb_CrudOperation::Student_save"/>
+		</resources>
+	</route>
+	<route url="/V1/jrb-crudoperation/student/search" method="GET">
+		<service class="Jrb\CrudOperation\Api\StudentRepositoryInterface" method="getList"/>
+		<resources>
+			<resource ref="Jrb_CrudOperation::Student_view"/>
+		</resources>
+	</route>
+	<route url="/V1/jrb-crudoperation/student/:studentId" method="GET">
+		<service class="Jrb\CrudOperation\Api\StudentRepositoryInterface" method="get"/>
+		<resources>
+			<resource ref="Jrb_CrudOperation::Student_view"/>
+		</resources>
+	</route>
+	<route url="/V1/jrb-crudoperation/student/:studentId" method="PUT">
+		<service class="Jrb\CrudOperation\Api\StudentRepositoryInterface" method="save"/>
+		<resources>
+			<resource ref="Jrb_CrudOperation::Student_update"/>
+		</resources>
+	</route>
+	<route url="/V1/jrb-crudoperation/student/:studentId" method="DELETE">
+		<service class="Jrb\CrudOperation\Api\StudentRepositoryInterface" method="deleteById"/>
+		<resources>
+			<resource ref="Jrb_CrudOperation::Student_delete"/>
+		</resources>
+	</route>
+</routes>

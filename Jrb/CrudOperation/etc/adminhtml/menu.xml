@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add id="Jrb::top_level" title="Jrb" module="Jrb_CrudOperation" sortOrder="9999" resource="Magento_Backend::content"/>
+		<add id="Jrb_CrudOperation::jrb_crudoperation_student" title="Student" module="Jrb_CrudOperation" sortOrder="9999" resource="Magento_Backend::content" parent="Jrb::top_level" action="jrb_crudoperation/student/index"/>
+	</menu>
+</config>
